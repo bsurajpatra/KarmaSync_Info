@@ -69,7 +69,7 @@ REACT_APP_EMAILJS_PUBLIC_API=
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React + Vite
+- **Frontend**: React
 - **Backend**: Node.js + Express (MVC Pattern)
 - **Database**: MongoDB Atlas (Free Tier)
 - **Authentication**: JWT, Email OTP
