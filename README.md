@@ -2,8 +2,6 @@
 
 **Karma Sync** is a modern, lightweight **Agile Project Management Suite** designed for both individuals and teams. It empowers users to manage personal and collaborative projects, track issues using a Kanban board, and stay productive with a built-in daily to-do tracker — all from one streamlined dashboard.
 
-# 💼 Karma Sync
-
 > Frontend Repo: [karmasync_frontend](https://github.com/bsurajpatra/karmasync)  
 > Backend Repo: [karmasync_backend](https://github.com/bsurajpatra/karmasync_backend)
 
