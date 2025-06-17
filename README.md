@@ -82,7 +82,7 @@ REACT_APP_EMAILJS_PUBLIC_API=
 ### 🔧 Frontend Setup
 
 ```bash
-git clone https://github.com/bsurajpatra/karmasync_frontend.git
+git clone https://github.com/bsurajpatra/karmasync.git
 cd karmasync_frontend
 npm install
 npm run dev
