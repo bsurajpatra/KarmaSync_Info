@@ -114,4 +114,4 @@ npm start
 
 ## 📃 License
 
-Licensed under the [MIT License](https://opensource.org/licenses/MIT) — use freely with attribution.
+Licensed under the [MIT License](https://github.com/bsurajpatra/KarmaSync_Info/blob/main/LICENSE) — use freely with attribution.
