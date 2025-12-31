@@ -38,6 +38,33 @@
   - Add or remove issues/tasks from **Planned** and **Active** sprints
   - Automatic cleanup of sprint-task associations when a sprint is **Completed** or **Cancelled**
   - Clear visibility of sprint progress and lifecycle
+ 
+  - 
+### 📘 User Stories
+
+User Stories help break down project requirements into meaningful units of work and act as a bridge between planning and execution.
+
+#### ✨ Story Structure
+Each **User Story** includes:
+- **Title**
+- **Description**
+- **Status**:
+  - **Draft** – Not ready yet
+  - **Ready** – Can be worked on
+  - **In Progress** – At least one task started
+  - **Done** – All tasks completed
+- **Sprint assignment** (optional, one sprint at a time)
+- **Multiple associated tasks**
+
+#### 🔗 Task Association
+- A single **User Story can contain multiple tasks**
+- Tasks are created independently and can be assigned to a story at any time
+- Tasks inherit sprint context from their parent story
+
+
+#### 📊 Automatic Progress Tracking
+- Each story displays a **progress bar**
+- Progress is calculated automatically based on task completion:
 
 ### 🏷️ Issue & Task Tagging
 - Add **multiple tags** to any issue or task
