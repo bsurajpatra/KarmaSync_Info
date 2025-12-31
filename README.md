@@ -26,6 +26,27 @@
 - Edit, delete, and mark tasks as done
 - Search and filter your task list easily
 
+### 🏃 Sprint Management 
+- Organize project work using **Sprints**
+- Each sprint has one of the following statuses:
+  - **Planned**
+  - **Active**
+  - **Completed**
+  - **Cancelled**
+- Sprint capabilities:
+  - Create and edit sprints while in **Planned** state
+  - Add or remove issues/tasks from **Planned** and **Active** sprints
+  - Automatic cleanup of sprint-task associations when a sprint is **Completed** or **Cancelled**
+  - Clear visibility of sprint progress and lifecycle
+
+### 🏷️ Issue & Task Tagging
+- Add **multiple tags** to any issue or task
+- Use tags for flexible categorization:
+  - Priority-based
+  - Technology-based
+  - Workflow-based
+- Improves filtering, searching, and overall task organization
+
 ### 🔐 Authentication & Security
 - JWT-based secure login
 - OTP validation for new account creation
