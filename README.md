@@ -5,123 +5,209 @@
 > Frontend Repo: [karmasync_frontend](https://github.com/bsurajpatra/karmasync)  
 > Backend Repo: [karmasync_backend](https://github.com/bsurajpatra/karmasync_backend)
 
+---
+
+## 🌟 Key Highlights
+
+- Manage **personal and collaborative projects**
+- Visual **Kanban board** for issue tracking
+- **Sprint & User Story management**
+- Built-in **daily to-do tracker**
+- **Project Activity Log** for transparency
+- **@Mentions in issue comments** for collaboration
+- Secure authentication with email workflows
 
 ---
 
-## 🚀 Features
+## 🧠 Project Management
 
-### 🧠 Project Management
+### Projects
 - Create **Personal** and **Collaborative** projects
-- Visual **Kanban Board** to manage tasks: To-Do → Doing → Done
-- Add and assign issues within projects
-- Roles in collaborative projects:
-  - **Project Manager**: Full control over tasks and collaborators
-  - **Developer**: Limited to viewing and updating assigned tasks
-- Collaborator management: Add/Remove members, assign roles
+- Role-based access:
+  - **Project Manager** – Full control
+  - **Developer** – Assigned-task access
+- Add / remove collaborators
+- Assign roles dynamically
 
-### ✅ Personal Daily To-Dos
-- Dedicated dashboard for managing personal daily tasks
-- Add task name, priority, category, and due date
-- Organize work, health, study, and custom routines
-- Edit, delete, and mark tasks as done
-- Search and filter your task list easily
+### Kanban Board
+- Issue workflow:
+  - **To-Do → Doing → Done**
+- Drag-and-drop task movement
+- Status updates tracked automatically
 
-### 🏃 Sprint Management 
-- Organize project work using **Sprints**
-- Each sprint has one of the following statuses:
-  - **Planned**
-  - **Active**
-  - **Completed**
-  - **Cancelled**
-- Sprint capabilities:
-  - Create and edit sprints while in **Planned** state
-  - Add or remove issues/tasks from **Planned** and **Active** sprints
-  - Automatic cleanup of sprint-task associations when a sprint is **Completed** or **Cancelled**
-  - Clear visibility of sprint progress and lifecycle
- 
-  - 
-### 📘 User Stories
+---
 
-User Stories help break down project requirements into meaningful units of work and act as a bridge between planning and execution.
+## 🏃 Sprint Management
 
-#### ✨ Story Structure
-Each **User Story** includes:
-- **Title**
-- **Description**
-- **Status**:
-  - **Draft** – Not ready yet
-  - **Ready** – Can be worked on
-  - **In Progress** – At least one task started
-  - **Done** – All tasks completed
-- **Sprint assignment** (optional, one sprint at a time)
-- **Multiple associated tasks**
+- Organize work into **Sprints**
+- Sprint statuses:
+  - Planned
+  - Active
+  - Completed
+  - Cancelled
 
-#### 🔗 Task Association
-- A single **User Story can contain multiple tasks**
-- Tasks are created independently and can be assigned to a story at any time
+### Sprint Rules
+- Create/edit sprints only in **Planned** state
+- Add/remove tasks in **Planned** and **Active** states
+- Automatic cleanup when sprint is **Completed** or **Cancelled**
+- Clear sprint lifecycle visibility
+
+---
+
+## 📘 User Stories
+
+User Stories bridge planning and execution.
+
+### Story Structure
+- Title & description
+- Status:
+  - Draft
+  - Ready
+  - In Progress
+  - Done
+- Optional sprint assignment
+- Multiple associated tasks
+
+### Automatic Progress Tracking
+- Progress bar calculated from task completion
 - Tasks inherit sprint context from their parent story
 
+---
 
-#### 📊 Automatic Progress Tracking
-- Each story displays a **progress bar**
-- Progress is calculated automatically based on task completion:
+## ✅ Issues & Tasks
 
-### 🏷️ Issue & Task Tagging
-- Add **multiple tags** to any issue or task
-- Use tags for flexible categorization:
-  - Priority-based
-  - Technology-based
-  - Workflow-based
-- Improves filtering, searching, and overall task organization
+- Create and assign issues/tasks
+- Independent task creation
+- Optional linking to user stories
+- Task tagging for:
+  - Priority
+  - Technology
+  - Workflow
+- Advanced filtering & search
 
-### 🔐 Authentication & Security
-- JWT-based secure login
-- OTP validation for new account creation
+---
+
+## 💬 Issue Comments & @Mentions
+
+- Comment on issues for collaboration
+- Tag project members using `@username`
+- Mentions are:
+  - Parsed and validated on backend
+  - Highlighted in the UI
+  - Stored explicitly (no fragile text-only parsing)
+
+> 🔔 Mentions are notification-ready, but **do not trigger notifications yet** (by design).
+
+---
+
+## 🧾 Project Activity Log
+
+A centralized **Activity Log** tracks **who did what and when** within a project.
+
+### Logged Events Include
+- Task status changes
+- Kanban movements
+- Sprint lifecycle updates
+- Story updates
+- Member additions / role changes
+- Issue comments (event-level only)
+
+### Design Principles
+- Service-level logging (not controller-based)
+- Human-readable descriptions
+- No activity spam
+- No full content snapshots
+
+### Project Overview Activity Widget
+- Displays recent project activity (last 5–10 events)
+- Same view for all project members
+- Lightweight, read-only widget
+- Optional "View all activity" modal
+
+> 📌 This is **project-wide activity**, not user-specific notifications.
+
+---
+
+## ✅ Personal Daily To-Dos
+
+- Dedicated dashboard for personal productivity
+- Add:
+  - Task name
+  - Priority
+  - Category
+  - Due date
+- Organize:
+  - Work
+  - Health
+  - Study
+  - Custom routines
+- Edit, delete, mark complete
+- Search & filter tasks easily
+
+---
+
+## 🔐 Authentication & Security
+
+- JWT-based authentication
+- OTP verification during signup
 - Forgot password recovery via email
+- Secure credential handling
 
-### 📬 Mailing Service
-- **Sending Mails (OTP verification, Forgot Password, etc.):**  
-  Implemented using **Gmail SMTP** via the backend server. This handles system-generated emails securely.
-- **Receiving Messages (Contact Us form submissions):**  
-  Managed through **[EmailJS](https://www.emailjs.com/)** from the frontend, allowing direct message delivery without server-side handling.
+---
 
-#### 📄 `.env` Setup
+## 📬 Mailing System (Intentionally Limited)
 
-**Backend (`.env`):**
-```env
-EMAIL_USER=yourgmail@gmail.com
-EMAIL_PASS=your-app-password
-PORT=
-MONGODB_URI=
-JWT_SECRET=
-FRONTEND_URL=
-```
+Emails are sent **only for critical events**:
 
-**Frontend (`.env`):**
-```env
-REACT_APP_API_URL=
-REACT_APP_EMAILJS_SERVICE_ID=
-REACT_APP_EMAILJS_TEMPLATE_ID=
-REACT_APP_EMAILJS_PUBLIC_API=
-```
+- New account creation (OTP)
+- Welcome email
+- Forgot password
+- Added to a project
 
-### 👤 Profile Management
+❌ No emails for:
+- Task updates
+- Comments
+- Activity
+- Notifications
+
+This avoids inbox fatigue and keeps communication intentional.
+
+---
+
+## 👤 Profile Management
+
 - View and update user profile
 - Manage credentials and preferences
 
-### 📞 Contact & Support
-- Integrated **Contact Us** section for feedback and help
-- All user queries are routed via EmailJS to our support team
+---
+
+## 📞 Contact & Support
+
+- Integrated **Contact Us** form
+- Messages handled via **EmailJS** from frontend
+- No server-side inbox exposure
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React
-- **Backend**: Node.js + Express (MVC Pattern)
-- **Database**: MongoDB Atlas (Free Tier)
-- **Authentication**: JWT, Email OTP
-- **Mailing**: Gmail SMTP (Send) + EmailJS (Receive)
+### Frontend
+- React
+
+### Backend
+- Node.js
+- Express.js (MVC architecture)
+
+### Database
+- MongoDB Atlas (Free Tier)
+
+### Authentication & Security
+- JWT
+- Email OTP verification
+
+### Mailing
+- Gmail SMTP (system emails)
+- EmailJS (contact form)
 
 ---
 
@@ -143,6 +229,28 @@ git clone https://github.com/bsurajpatra/karmasync_backend.git
 cd karmasync_backend
 npm install
 npm start
+```
+
+### 🔑 Environment Configuration
+
+#### Backend (`.env`)
+
+```env
+EMAIL_USER=yourgmail@gmail.com
+EMAIL_PASS=your-app-password
+PORT=5000
+MONGODB_URI=your-mongodb-connection-string
+JWT_SECRET=your-secret-key
+FRONTEND_URL=http://localhost:3000
+```
+
+#### Frontend (`.env`)
+
+```env
+REACT_APP_API_URL=http://localhost:5000
+REACT_APP_EMAILJS_SERVICE_ID=your-service-id
+REACT_APP_EMAILJS_TEMPLATE_ID=your-template-id
+REACT_APP_EMAILJS_PUBLIC_API=your-public-key
 ```
 
 ---
